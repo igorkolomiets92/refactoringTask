@@ -78,6 +78,9 @@ class Countries
         return in_array($countryIsoCode, self::getAllEuCountries());
     }
 
+    /**
+     * @throws Exception
+     */
     public function getCountryAlpha2(int $bin): string
     {
         $url = 'https://lookup.binlist.net/' . $bin;
@@ -95,6 +98,9 @@ class Countries
         return $data['country']['alpha2'];
     }
 
+    /**
+     * @throws Exception
+     */
     public function isEuCountryByBin(int $bin): bool
     {
         $alpha2 = $this->getCountryAlpha2($bin);

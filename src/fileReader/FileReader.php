@@ -4,6 +4,9 @@ namespace fileReader;
 
 class FileReader implements FileReaderInterface
 {
+    /**
+     * @throws \Exception
+     */
     public function read(string $url): string
     {
         $content = file_get_contents($url);

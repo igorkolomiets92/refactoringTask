@@ -1,15 +1,21 @@
 <?php
 
+use \fileReader\FileReaderInterface;
+use \fileReader\FileReader;
+
 class Rates {
     private array $rates = [];
-    private \fileReader\FileReaderInterface $fileReader;
+    private FileReaderInterface $fileReader;
 
-    public function __construct(\fileReader\FileReaderInterface $fileReader = new \fileReader\FileReader())
+    public function __construct(FileReaderInterface $fileReader = new FileReader())
     {
         $this->fileReader = $fileReader;
         $this->fillRates();
     }
 
+    /**
+     * @throws Exception
+     */
     private function fillRates(string $apiKey = 'testApiKey'): void
     {
         $url = 'https://api.exchangeratesapi.io/latest?access_key=' . $apiKey;

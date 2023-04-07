@@ -40,7 +40,7 @@ class Countries
         $this->fileReader = $fileReader;
     }
 
-    private function getAllEuCountries()
+    private function getAllEuCountries(): array
     {
         return [
             self::AUSTRIA,
@@ -95,7 +95,7 @@ class Countries
         return $data['country']['alpha2'];
     }
 
-    public function isEuCountryByBin(int $bin)
+    public function isEuCountryByBin(int $bin): bool
     {
         $alpha2 = $this->getCountryAlpha2($bin);
         return $this->isEuCountry($alpha2);

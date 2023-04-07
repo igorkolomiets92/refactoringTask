@@ -3,7 +3,7 @@
 class Commission
 {
 
-    public static function calculate($currency, $amount, $rate, $isEuCountry)
+    public static function calculate($currency, $amount, $rate, $isEuCountry): float
     {
         $amntFixed = 0;
 

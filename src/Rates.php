@@ -10,7 +10,7 @@ class Rates {
         $this->fillRates();
     }
 
-    private function fillRates(string $apiKey = 'testApiKey')
+    private function fillRates(string $apiKey = 'testApiKey'): void
     {
         $url = 'https://api.exchangeratesapi.io/latest?access_key=' . $apiKey;
         $content = $this->fileReader->read($url);
